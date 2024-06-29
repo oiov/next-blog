@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710044001674,
+      "tag": "0000_shallow_iron_fist",
+      "breakpoints": true
+    }
+  ]
+}
