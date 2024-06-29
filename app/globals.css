@@ -39,3 +39,17 @@ html.dark {
     opacity: 0;
   }
 }
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  background-color: hsla(215, 10%, 77%, 0.548);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: hsla(215, 10%, 77%, 0.548);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 59%, 0.524);
+}
