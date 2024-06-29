@@ -131,6 +131,13 @@ export async function Footer() {
               <React.Suspense>
                 <LastVisitorInfo />
               </React.Suspense>
+              ·
+              <a
+                href="https://status.wr.do"
+                className="text-xs text-zinc-500 dark:text-zinc-400"
+              >
+                Status
+              </a>
             </div>
           </Container.Inner>
         </div>
