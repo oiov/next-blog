@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: seo.title,
   },
   description: seo.description,
-  keywords: 'Oiov,Oiov,郭晓楠,佐玩,创始人,CEO,开发者,设计师,细节控,创新',
+  keywords: 'Oiov,开发者,细节控,前端开花者',
   manifest: '/site.webmanifest',
   robots: {
     index: true,

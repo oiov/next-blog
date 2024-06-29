@@ -50,7 +50,7 @@ export default function Layout({
                   <strong>Oiov</strong>
                 </Link>
                 <br />
-                开发者、设计师、细节控、创始人
+                前端开花者
               </Text>
               <Text className="text-center">
                 <Link
