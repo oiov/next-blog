@@ -13,13 +13,13 @@ function getKey(url: string) {
 
 const faviconMapper: { [key: string]: string } = {
   '((?:zolplay.cn)|(?:zolplay.com)|(?:cn.zolplay.com))':
-    'https://cali.so/favicons/zolplay.png',
-  '(?:github.com)': 'https://cali.so/favicons/github.png',
+    'https://oiov.dev/favicons/zolplay.png',
+  '(?:github.com)': 'https://oiov.dev/favicons/github.png',
   '((?:t.co)|(?:twitter.com)|(?:x.com))':
-    'https://cali.so/favicons/twitter.png',
-  'coolshell.cn': 'https://cali.so/favicons/coolshell.png',
-  'vercel.com': 'https://cali.so/favicons/vercel.png',
-  'nextjs.org': 'https://cali.so/favicons/nextjs.png',
+    'https://oiov.dev/favicons/twitter.png',
+  'coolshell.cn': 'https://oiov.dev/favicons/coolshell.png',
+  'vercel.com': 'https://oiov.dev/favicons/vercel.png',
+  'nextjs.org': 'https://oiov.dev/favicons/nextjs.png',
 }
 
 function getPredefinedIconForUrl(url: string): string | undefined {
@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.error()
   }
 
-  let iconUrl = 'https://cali.so/favicon_blank.png'
+  let iconUrl = 'https://oiov.dev/favicon_blank.png'
 
   try {
     const predefinedIcon = getPredefinedIconForUrl(url)

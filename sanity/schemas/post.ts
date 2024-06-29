@@ -89,8 +89,13 @@ export default defineType({
     defineField({
       name: 'body',
       title: '内容',
-      type: 'blockContent',
+      type: 'blockContent', // 'blockContent',
     }),
+    // defineField({
+    //   type: 'markdown',
+    //   title: 'markdown内容',
+    //   name: 'markdown',
+    // }),
     defineField({
       name: 'readingTime',
       title: '阅读时长（分钟）',
