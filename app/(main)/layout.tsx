@@ -6,6 +6,7 @@ import { Suspense } from 'react'
 import { Footer } from '~/app/(main)/Footer'
 import { Header } from '~/app/(main)/Header'
 import { QueryProvider } from '~/app/QueryProvider'
+import GoogleAnalytics from './GoogleAnalytics'
 
 export default function BlogLayout({
   children,
@@ -33,6 +34,7 @@ export default function BlogLayout({
         </div>
       </QueryProvider>
 
+      <GoogleAnalytics />
       <Analytics />
     </>
   )
