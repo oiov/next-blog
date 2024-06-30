@@ -7,6 +7,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    domains: [
+      'avatars.githubusercontent.com',
+      'gcloud-1303456836.cos.ap-chengdu.myqcloud.com',
+      'img.vmail.dev',
+    ],
     remotePatterns: [
       {
         protocol: 'https',
