@@ -153,21 +153,6 @@ export async function POST(req: NextRequest, { params }: Params) {
               commentContent: body.text,
             }),
           })
-        } else {
-          await resend.emails.send({
-            from: emailConfig.from,
-            to: env.SITE_NOTIFICATION_EMAIL_TO,
-            subject: '💬 有人评论了你的笔记',
-            react: NewReplyCommentEmail({
-              postTitle: post.title,
-              postLink: url(`/blog/${post.slug}`).href,
-              postImageUrl: post.imageUrl,
-              userFirstName: user.firstName,
-              userLastName: user.lastName,
-              userImageUrl: user.imageUrl,
-              commentContent: body.text,
-            }),
-          })
         }
       }
     }
@@ -178,6 +163,21 @@ export async function POST(req: NextRequest, { params }: Params) {
       .returning({
         newId: comments.id,
       })
+
+    await resend.emails.send({
+      from: emailConfig.from,
+      to: env.SITE_NOTIFICATION_EMAIL_TO,
+      subject: '💬 有人评论了你的笔记',
+      react: NewReplyCommentEmail({
+        postTitle: post.title,
+        postLink: url(`/blog/${post.slug}`).href,
+        postImageUrl: post.imageUrl,
+        userFirstName: user.firstName,
+        userLastName: user.lastName,
+        userImageUrl: user.imageUrl,
+        commentContent: body.text,
+      }),
+    })
 
     return NextResponse.json({
       ...commentData,
