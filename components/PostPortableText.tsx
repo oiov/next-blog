@@ -52,6 +52,8 @@ export function PostPortableText(props: {
   value: any
   components?: PortableTextComponents
 }) {
+  // console.log('文章内容', JSON.stringify(props))
+
   return (
     <PortableText
       value={props.value}

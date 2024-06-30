@@ -131,12 +131,11 @@ export async function Footer() {
               <React.Suspense>
                 <LastVisitorInfo />
               </React.Suspense>
-
               <a
                 href="https://status.wr.do"
-                className="animate-pulse text-xs font-semibold text-zinc-600 transition-colors duration-300 hover:text-green-500 dark:text-zinc-400 dark:hover:text-green-500"
+                className="text-xs font-semibold text-zinc-500 transition-colors duration-300 hover:text-green-500 dark:text-zinc-400 dark:hover:text-green-500"
               >
-                ⚪ Status
+                <span className="animate-pulse">🟢</span> Status
               </a>
             </div>
           </Container.Inner>

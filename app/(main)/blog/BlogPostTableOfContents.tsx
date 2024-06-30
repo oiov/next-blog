@@ -3,31 +3,38 @@
 import { clsxm } from '@zolplay/utils'
 import { motion, useScroll, type Variants } from 'framer-motion'
 import React from 'react'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkHtml from 'remark-html'
+import { visit } from 'unist-util-visit'
 
-interface HeadingNode {
-  _type: 'span'
-  text: string
-  _key: string
-}
-
-interface Node {
-  _type: 'block'
+interface Heading {
   style: 'h1' | 'h2' | 'h3' | 'h4'
-  _key: string
-  children?: HeadingNode[]
+  text: string
+  id: string
 }
 
-const parseOutline = (nodes: Node[]) => {
-  return nodes
-    .filter((node) => node._type === 'block' && node.style.startsWith('h'))
-    .map((node) => {
-      return {
-        style: node.style,
-        text:
-          node.children?.[0] !== undefined ? node.children[0].text ?? '' : '',
-        id: node._key,
-      }
+const parseMarkdown = async (markdown: string): Promise<Heading[]> => {
+  const headings: Heading[] = []
+
+  const processor = unified()
+    .use(remarkParse)
+    .use(() => (tree) => {
+      visit(tree, 'heading', (node) => {
+        const textNode = node.children[0]
+        if (textNode.type === 'text') {
+          headings.push({
+            style: `h${node.depth}` as Heading['style'],
+            text: textNode.value,
+            id: textNode.value.toLowerCase().replace(/\s+/g, '-'),
+          })
+        }
+      })
     })
+    .use(remarkHtml)
+
+  await processor.process(markdown)
+  return headings
 }
 
 const listVariants = {
@@ -59,24 +66,31 @@ const itemVariants = {
   },
 } satisfies Variants
 
-export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
-  const outline = parseOutline(headings)
+export function BlogPostTableOfContents({ markdown }: { markdown: string }) {
+  const [headings, setHeadings] = React.useState<Heading[]>([])
   const { scrollY } = useScroll()
   const [highlightedHeadingId, setHighlightedHeadingId] = React.useState<
     string | null
   >(null)
 
   React.useEffect(() => {
+    const getHeadings = async () => {
+      const headingsData = await parseMarkdown(markdown)
+      setHeadings(headingsData)
+    }
+    getHeadings()
+  }, [markdown])
+
+  React.useEffect(() => {
     const handleScroll = () => {
       const articleElement = document.querySelector<HTMLElement>(
         'article[data-postid]'
       )
-      const outlineYs = outline.map((node) => {
+      const outlineYs = headings.map((heading) => {
         const el = document.querySelector<HTMLAnchorElement>(
-          `article ${node.style}:where([id="${node.id}"]) > a`
+          `article ${heading.style}:where([id="${heading.id}"]) > a`
         )
         if (!el) return 0
-
         return el.getBoundingClientRect().top
       })
 
@@ -86,9 +100,9 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
         } else {
           const idx = outlineYs.findIndex((y) => y > 0)
           if (idx === -1) {
-            setHighlightedHeadingId(outline[outline.length - 1]?.id ?? null)
+            setHighlightedHeadingId(headings[headings.length - 1]?.id ?? null)
           } else {
-            setHighlightedHeadingId(outline[idx]?.id ?? null)
+            setHighlightedHeadingId(headings[idx]?.id ?? null)
           }
         }
       }
@@ -99,7 +113,7 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [outline, scrollY])
+  }, [headings, scrollY])
 
   return (
     <motion.ul
@@ -108,22 +122,24 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
       variants={listVariants}
       className="group pointer-events-auto flex flex-col space-y-2 text-zinc-500"
     >
-      {outline.map((node) => (
+      {headings.map((heading) => (
         <motion.li
-          key={node.id}
+          key={heading.id}
           variants={itemVariants}
           className={clsxm(
             'text-[12px] font-medium leading-[18px] transition-colors duration-300',
-            node.style === 'h3' && 'ml-1',
-            node.style === 'h4' && 'ml-2',
-            node.id === highlightedHeadingId
+            heading.style === 'h3' && 'ml-1',
+            heading.style === 'h4' && 'ml-2',
+            heading.id === highlightedHeadingId
               ? 'text-zinc-900 dark:text-zinc-200'
               : 'hover:text-zinc-700 dark:hover:text-zinc-400 group-hover:[&:not(:hover)]:text-zinc-400 dark:group-hover:[&:not(:hover)]:text-zinc-600'
           )}
-          aria-label={node.id === highlightedHeadingId ? '当前位置' : undefined}
+          aria-label={
+            heading.id === highlightedHeadingId ? '当前位置' : undefined
+          }
         >
-          <a href={`#${node.id}`} className="block w-full">
-            {node.text}
+          <a href={`#${heading.id}`} className="block w-full">
+            {heading.text}
           </a>
         </motion.li>
       ))}

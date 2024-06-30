@@ -9,6 +9,7 @@ import { structureTool } from 'sanity/structure'
 import { media } from 'sanity-plugin-media'
 
 import { settingsPlugin, settingsStructure } from '~/sanity/plugins/settings'
+import { markdownSchema } from 'sanity-plugin-markdown'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from './sanity/env'
@@ -33,5 +34,6 @@ export default defineConfig({
     }),
     media(),
     codeInput(),
+    markdownSchema(),
   ],
 })

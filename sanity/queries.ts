@@ -59,6 +59,7 @@ export const getBlogPostQuery = groq`
     description,
     publishedAt,
     readingTime,
+    markdown,
     mood,
     body[] {
       ...,

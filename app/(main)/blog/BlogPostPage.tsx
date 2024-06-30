@@ -17,7 +17,7 @@ import {
   UTurnLeftIcon,
 } from '~/assets'
 import { ClientOnly } from '~/components/ClientOnly'
-import { PostPortableText } from '~/components/PostPortableText'
+// import { PostPortableText } from '~/components/PostPortableText'
 import { Prose } from '~/components/Prose'
 import { Button } from '~/components/ui/Button'
 import { Container } from '~/components/ui/Container'
@@ -26,6 +26,10 @@ import { type PostDetail } from '~/sanity/schemas/post'
 
 import { BlogPostCard } from './BlogPostCard'
 import { BlogPostTableOfContents } from './BlogPostTableOfContents'
+
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
 
 export function BlogPostPage({
   post,
@@ -38,12 +42,14 @@ export function BlogPostPage({
   reactions?: number[]
   relatedViews: number[]
 }) {
+  // console.log('md格式', post.markdown)
+
   return (
     <Container className="mt-16 lg:mt-32">
       <div className="w-full md:flex md:justify-between xl:relative">
         <aside className="hidden w-[160px] shrink-0 lg:block">
           <div className="sticky top-2 pt-20">
-            <BlogPostTableOfContents headings={post.headings} />
+            <BlogPostTableOfContents markdown={post.markdown} />
           </div>
         </aside>
         <div className="max-w-2xl md:flex-1 md:shrink-0">
@@ -171,7 +177,13 @@ export function BlogPostPage({
               </motion.div>
             </header>
             <Prose className="mt-8">
-              <PostPortableText value={post.body} />
+              {/* <PostPortableText value={post.body} /> */}
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeSlug]}
+              >
+                {post.markdown}
+              </Markdown>
             </Prose>
           </article>
         </div>

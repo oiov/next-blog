@@ -25,6 +25,7 @@ export const Post = z.object({
   description: z.string(),
   categories: z.array(z.string()).optional(),
   body: z.any(),
+  markdown: z.string(),
   readingTime: z.number(),
   mood: z.enum(['happy', 'sad', 'neutral']),
 })
@@ -89,13 +90,13 @@ export default defineType({
     defineField({
       name: 'body',
       title: '内容',
-      type: 'blockContent', // 'blockContent',
+      type: 'blockContent',
     }),
-    // defineField({
-    //   type: 'markdown',
-    //   title: 'markdown内容',
-    //   name: 'markdown',
-    // }),
+    defineField({
+      type: 'markdown',
+      title: 'markdown内容',
+      name: 'markdown',
+    }),
     defineField({
       name: 'readingTime',
       title: '阅读时长（分钟）',
