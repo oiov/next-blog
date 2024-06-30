@@ -12,7 +12,7 @@ import {
   type PostIDLessCommentDto,
 } from '~/db/dto/comment.dto'
 import { comments } from '~/db/schema'
-import NewReplyCommentEmail from '~/emails/NewReplyComment'
+import NewReplyCommentEmail, { NewCommentEmail } from '~/emails/NewReplyComment'
 import { env } from '~/env.mjs'
 import { url } from '~/lib'
 import { resend } from '~/lib/mail'
@@ -136,14 +136,13 @@ export async function POST(req: NextRequest, { params }: Params) {
         const primaryEmailAddress = emailAddresses.find(
           (emailAddress) => emailAddress.id === primaryEmailAddressId
         )
-        console.log('primaryEmailAddress', primaryEmailAddress)
 
         if (primaryEmailAddress) {
           await resend.emails.send({
             from: emailConfig.from,
             to: primaryEmailAddress.emailAddress,
             subject: '👋 有人回复了你的评论',
-            react: NewReplyCommentEmail({
+            react: NewCommentEmail({
               postTitle: post.title,
               postLink: url(`/blog/${post.slug}`).href,
               postImageUrl: post.imageUrl,
