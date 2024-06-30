@@ -142,7 +142,7 @@ export async function POST(req: NextRequest, { params }: Params) {
             from: emailConfig.from,
             to: primaryEmailAddress.emailAddress,
             subject: '👋 有人回复了你的评论',
-            react: NewCommentEmail({
+            react: NewReplyCommentEmail({
               postTitle: post.title,
               postLink: url(`/blog/${post.slug}`).href,
               postImageUrl: post.imageUrl,
@@ -167,7 +167,7 @@ export async function POST(req: NextRequest, { params }: Params) {
       from: emailConfig.from,
       to: env.SITE_NOTIFICATION_EMAIL_TO,
       subject: '💬 有人评论了你的笔记',
-      react: NewReplyCommentEmail({
+      react: NewCommentEmail({
         postTitle: post.title,
         postLink: url(`/blog/${post.slug}`).href,
         postImageUrl: post.imageUrl,
