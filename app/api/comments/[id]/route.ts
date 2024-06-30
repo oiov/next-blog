@@ -123,7 +123,7 @@ export async function POST(req: NextRequest, { params }: Params) {
       parentId: parentId ? (parentId as number) : null,
     }
 
-    if (parentId && env.NODE_ENV === 'production') {
+    if (parentId) {
       const [parentUserFromDb] = await db
         .select({
           userId: comments.userId,
@@ -136,11 +136,28 @@ export async function POST(req: NextRequest, { params }: Params) {
         const primaryEmailAddress = emailAddresses.find(
           (emailAddress) => emailAddress.id === primaryEmailAddressId
         )
+        console.log('primaryEmailAddress', primaryEmailAddress)
+
         if (primaryEmailAddress) {
           await resend.emails.send({
             from: emailConfig.from,
             to: primaryEmailAddress.emailAddress,
             subject: '👋 有人回复了你的评论',
+            react: NewReplyCommentEmail({
+              postTitle: post.title,
+              postLink: url(`/blog/${post.slug}`).href,
+              postImageUrl: post.imageUrl,
+              userFirstName: user.firstName,
+              userLastName: user.lastName,
+              userImageUrl: user.imageUrl,
+              commentContent: body.text,
+            }),
+          })
+        } else {
+          await resend.emails.send({
+            from: emailConfig.from,
+            to: env.SITE_NOTIFICATION_EMAIL_TO,
+            subject: '💬 有人评论了你的笔记',
             react: NewReplyCommentEmail({
               postTitle: post.title,
               postLink: url(`/blog/${post.slug}`).href,
