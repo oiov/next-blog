@@ -183,7 +183,7 @@ export function BlogPostPage({
               {/* <PostPortableText value={post.body} /> */}
               <Markdown
                 remarkPlugins={[remarkGfm]}
-                // @ts-ignore
+                // @ts-expect-error
                 rehypePlugins={[rehypeSlug, rehypeRaw, rehypeHighlight]}
                 components={{ code: Code }}
               >
