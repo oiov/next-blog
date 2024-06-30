@@ -30,6 +30,9 @@ import { BlogPostTableOfContents } from './BlogPostTableOfContents'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
+import 'highlight.js/styles/atom-one-dark.css'
 
 export function BlogPostPage({
   post,
@@ -180,7 +183,8 @@ export function BlogPostPage({
               {/* <PostPortableText value={post.body} /> */}
               <Markdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeSlug]}
+                rehypePlugins={[rehypeSlug, rehypeRaw, rehypeHighlight]}
+                components={{ code: Code }}
               >
                 {post.markdown}
               </Markdown>
@@ -222,4 +226,8 @@ export function BlogPostPage({
       </ClientOnly>
     </Container>
   )
+}
+
+function Code({ node, className, children, ...props }) {
+  return <div className={className}>{children}</div>
 }
