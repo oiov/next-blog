@@ -82,24 +82,14 @@ export function Headline() {
           platform="twitter"
         />
         <SocialLink
-          href="https://oiov.dev/youtube"
-          aria-label="我的 YouTube"
-          platform="youtube"
-        />
-        <SocialLink
-          href="https://oiov.dev/bilibili"
-          aria-label="我的 Bilibili"
-          platform="bilibili"
-        />
-        <SocialLink
           href="https://oiov.dev/github"
           aria-label="我的 GitHub"
           platform="github"
         />
         <SocialLink
-          href="https://oiov.dev/tg"
-          aria-label="我的 Telegram"
-          platform="telegram"
+          href="https://oiov.dev/bilibili"
+          aria-label="我的 Bilibili"
+          platform="bilibili"
         />
         <SocialLink href="/feed.xml" platform="rss" aria-label="RSS 订阅" />
         <SocialLink
