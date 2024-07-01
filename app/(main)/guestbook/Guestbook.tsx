@@ -8,8 +8,8 @@ import TwikooComment from '~/components/twikoo'
 
 export function Guestbook(props: { messages?: GuestbookDto[] }) {
   return (
-    <section className="max-w-2xl">
-      <div className="w-full max-w-2xl dark:text-white">
+    <section className="max-w-xl">
+      <div className="w-full dark:text-white">
         <TwikooComment />
       </div>
     </section>

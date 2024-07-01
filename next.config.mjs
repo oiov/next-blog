@@ -11,6 +11,11 @@ const nextConfig = {
       'avatars.githubusercontent.com',
       'gcloud-1303456836.cos.ap-chengdu.myqcloud.com',
       'img.vmail.dev',
+      'chaoszhu.com',
+      'mggg.cloud',
+      'www.aitimi.cn',
+      'vtron.site',
+      'blog.gholts.top',
     ],
     remotePatterns: [
       {
