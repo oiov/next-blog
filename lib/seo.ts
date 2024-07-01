@@ -3,7 +3,7 @@ export const seo = {
   description: '我叫 Oiov，一名前端开花者',
   url: new URL(
     process.env.NODE_ENV === 'production'
-      ? 'https://oiov.dev'
+      ? 'https://www.oiov.dev'
       : 'http://localhost:3000'
   ),
 } as const

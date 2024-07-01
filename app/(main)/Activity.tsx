@@ -38,7 +38,7 @@ export function Activity() {
       enabled:
         typeof window === 'undefined'
           ? false
-          : new URL(window.location.href).hostname === 'oiov.dev',
+          : new URL(window.location.href).hostname === 'www.oiov.dev',
     }
   )
   const [open, setOpen] = React.useState(false)

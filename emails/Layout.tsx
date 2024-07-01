@@ -44,7 +44,7 @@ export default function Layout({
               />
               <Text className="text-center">
                 <Link
-                  href="https://oiov.dev"
+                  href="https://www.oiov.dev"
                   className="text-zinc-700 underline"
                 >
                   <strong>Oiov</strong>
@@ -54,28 +54,28 @@ export default function Layout({
               </Text>
               <Text className="text-center">
                 <Link
-                  href="https://oiov.dev/twitter"
+                  href="https://www.oiov.dev/twitter"
                   className="text-xs text-zinc-600 underline"
                 >
                   Twitter
                 </Link>{' '}
                 |&nbsp;
                 <Link
-                  href="https://oiov.dev/youtube"
+                  href="https://www.oiov.dev/youtube"
                   className="text-xs text-zinc-600 underline"
                 >
                   YouTube
                 </Link>{' '}
                 |&nbsp;
                 <Link
-                  href="https://oiov.dev/github"
+                  href="https://www.oiov.dev/github"
                   className="text-xs text-zinc-600 underline"
                 >
                   GitHub
                 </Link>{' '}
                 |&nbsp;
                 <Link
-                  href="https://oiov.dev/bilibili"
+                  href="https://www.oiov.dev/bilibili"
                   className="text-xs text-zinc-600 underline"
                 >
                   哔哩哔哩

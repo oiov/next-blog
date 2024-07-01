@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Oiov',
     locale: 'zh_CN',
     type: 'website',
-    url: 'https://oiov.dev',
+    url: 'https://www.oiov.dev',
   },
   twitter: {
     site: '@thecalicastle',

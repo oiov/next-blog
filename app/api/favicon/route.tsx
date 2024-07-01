@@ -13,13 +13,13 @@ function getKey(url: string) {
 
 const faviconMapper: { [key: string]: string } = {
   '((?:zolplay.cn)|(?:zolplay.com)|(?:cn.zolplay.com))':
-    'https://oiov.dev/favicons/zolplay.png',
-  '(?:github.com)': 'https://oiov.dev/favicons/github.png',
+    'https://www.oiov.dev/favicons/zolplay.png',
+  '(?:github.com)': 'https://www.oiov.dev/favicons/github.png',
   '((?:t.co)|(?:twitter.com)|(?:x.com))':
-    'https://oiov.dev/favicons/twitter.png',
-  'coolshell.cn': 'https://oiov.dev/favicons/coolshell.png',
-  'vercel.com': 'https://oiov.dev/favicons/vercel.png',
-  'nextjs.org': 'https://oiov.dev/favicons/nextjs.png',
+    'https://www.oiov.dev/favicons/twitter.png',
+  'coolshell.cn': 'https://www.oiov.dev/favicons/coolshell.png',
+  'vercel.com': 'https://www.oiov.dev/favicons/vercel.png',
+  'nextjs.org': 'https://www.oiov.dev/favicons/nextjs.png',
 }
 
 function getPredefinedIconForUrl(url: string): string | undefined {
@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.error()
   }
 
-  let iconUrl = 'https://oiov.dev/favicon_blank.png'
+  let iconUrl = 'https://www.oiov.dev/favicon_blank.png'
 
   try {
     const predefinedIcon = getPredefinedIconForUrl(url)
