@@ -222,7 +222,7 @@ export function BlogPostPage({
         </section>
       ) : null}
 
-      <section className="mb-12 mt-12">
+      <section id="comment" className="mb-12 mt-12">
         <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
           <CommentIcon className="h-5 w-5 flex-none" />
           <span className="ml-2">参与评论</span>
