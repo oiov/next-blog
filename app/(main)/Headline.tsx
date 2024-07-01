@@ -77,17 +77,17 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://www.oiov.dev/x"
+          href="https://x.com/yesmoree"
           aria-label="我的推特"
           platform="twitter"
         />
         <SocialLink
-          href="https://www.oiov.dev/github"
+          href="https://github.com/oiov"
           aria-label="我的 GitHub"
           platform="github"
         />
         <SocialLink
-          href="https://www.oiov.dev/bilibili"
+          href="https://space.bilibili.com/299717355"
           aria-label="我的 Bilibili"
           platform="bilibili"
         />
