@@ -33,7 +33,7 @@ export default async function GuestBookPage() {
           欢迎来到我的留言墙
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          <Balancer>{description}</Balancer>
+          {description}
         </p>
       </header>
       <div className="mt-16 sm:mt-20">

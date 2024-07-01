@@ -25,7 +25,7 @@ import { prettifyNumber } from '~/lib/math'
 import { type PostDetail } from '~/sanity/schemas/post'
 
 import { BlogPostCard } from './BlogPostCard'
-import { BlogPostTableOfContents } from './BlogPostTableOfContents'
+import { BlogMarkdownOfContents } from './BlogPostTableOfContents'
 
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -33,6 +33,8 @@ import rehypeSlug from 'rehype-slug'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeRaw from 'rehype-raw'
 import 'highlight.js/styles/atom-one-dark.css'
+import TwikooComment from '~/components/twikoo'
+import { CommentIcon } from '~/assets/icons/CommentIcon'
 
 export function BlogPostPage({
   post,
@@ -45,14 +47,12 @@ export function BlogPostPage({
   reactions?: number[]
   relatedViews: number[]
 }) {
-  // console.log('md格式', post.markdown)
-
   return (
     <Container className="mt-16 lg:mt-32">
       <div className="w-full md:flex md:justify-between xl:relative">
         <aside className="hidden w-[160px] shrink-0 lg:block">
           <div className="sticky top-2 pt-20">
-            <BlogPostTableOfContents markdown={post.markdown} />
+            <BlogMarkdownOfContents markdown={post.markdown} />
           </div>
         </aside>
         <div className="max-w-2xl md:flex-1 md:shrink-0">
@@ -204,7 +204,7 @@ export function BlogPostPage({
       </div>
 
       {post.related && post.related.length > 0 ? (
-        <section className="mb-12 mt-32">
+        <section className="mb-16 mt-32">
           <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
             <PencilSwooshIcon className="h-5 w-5 flex-none" />
             <span className="ml-2">相关文章</span>
@@ -221,6 +221,17 @@ export function BlogPostPage({
           </div>
         </section>
       ) : null}
+
+      <section className="mb-12 mt-12">
+        <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
+          <CommentIcon className="h-5 w-5 flex-none" />
+          <span className="ml-2">参与评论</span>
+        </h2>
+
+        <div className="mx-auto w-full max-w-screen-md dark:text-white">
+          <TwikooComment />
+        </div>
+      </section>
 
       <ClientOnly>
         <BlogPostStateLoader post={post} />

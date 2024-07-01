@@ -104,7 +104,7 @@ export function Newsletter({ subCount }: { subCount?: string }) {
               placeholder="你的邮箱"
               aria-label="电子邮箱"
               required
-              className="min-w-0 flex-auto appearance-none rounded-lg border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] placeholder:text-zinc-400 focus:border-lime-500 focus:outline-none focus:ring-4 focus:ring-lime-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-lime-400/50 dark:focus:ring-lime-400/5 sm:text-sm"
+              className="min-w-0 flex-auto appearance-none rounded-lg border border-zinc-900/10 bg-gray-50/50 px-3 py-[calc(theme(spacing.2)-1px)] shadow-inner placeholder:text-zinc-400 focus:border-lime-500 focus:outline-none focus:ring-4 focus:ring-lime-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-lime-400/50 dark:focus:ring-lime-400/5 sm:text-sm"
               {...register('email')}
             />
             <Button
