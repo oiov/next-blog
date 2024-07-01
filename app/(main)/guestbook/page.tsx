@@ -1,5 +1,4 @@
 import { type Metadata } from 'next'
-import Balancer from 'react-wrap-balancer'
 
 import { Container } from '~/components/ui/Container'
 import { fetchGuestbookMessages } from '~/db/queries/guestbook'
