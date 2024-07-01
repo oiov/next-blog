@@ -204,7 +204,7 @@ export function BlogPostPage({
       </div>
 
       {post.related && post.related.length > 0 ? (
-        <section className="mb-16 mt-32">
+        <section id="related" className="mb-16 mt-32">
           <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
             <PencilSwooshIcon className="h-5 w-5 flex-none" />
             <span className="ml-2">相关文章</span>

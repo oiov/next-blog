@@ -144,6 +144,21 @@ export function BlogMarkdownOfContents({ markdown }: { markdown: string }) {
         </motion.li>
       ))}
       <motion.li
+        key="related-id"
+        variants={itemVariants}
+        className={clsxm(
+          'text-[12px] font-medium leading-[18px] transition-colors duration-300',
+          'related' === highlightedHeadingId
+            ? 'text-zinc-900 dark:text-zinc-200'
+            : 'hover:text-zinc-700 dark:hover:text-zinc-400 group-hover:[&:not(:hover)]:text-zinc-400 dark:group-hover:[&:not(:hover)]:text-zinc-600'
+        )}
+        aria-label={'related' === highlightedHeadingId ? '当前位置' : undefined}
+      >
+        <a href={`#related`} className="block w-full">
+          相关文章
+        </a>
+      </motion.li>
+      <motion.li
         key="comment-id"
         variants={itemVariants}
         className={clsxm(
