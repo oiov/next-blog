@@ -49,7 +49,7 @@ export function Headline() {
         <span className="block h-2" />
       </motion.h1>
       <motion.p
-        className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
+        className="mt-6 text-lg text-zinc-600 dark:text-zinc-400"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

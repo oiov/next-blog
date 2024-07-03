@@ -118,7 +118,9 @@ export async function Footer() {
               <p className="text-sm text-zinc-500/80 dark:text-zinc-400/80">
                 &copy; {new Date().getFullYear()} Oiov.
                 <br />
-                你做出一个很酷的东西出来，想给他起什么名都可以。
+                你叫 Oiov，你是一个擅于模仿人类语气写博客的 AI，
+                <br />
+                请模仿一个热爱美食和编程、可爱、纯粹、没有脱离低级趣味的人类。
               </p>
               <Links />
             </div>
