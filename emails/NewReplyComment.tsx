@@ -11,7 +11,7 @@ const NewReplyCommentEmail = ({
   postImageUrl = 'https://cn.zolplay.com/api/og?title=测试文章',
   userFirstName = 'Oiov',
   userLastName = 'Castle',
-  userImageUrl = 'https://www.oiov.dev/icon.png',
+  userImageUrl = 'https://www.oiov.dev/logo.png',
   commentContent = '*测试评论*\n- Wow wtf\n- Cool',
 }: {
   postLink?: string | null
@@ -99,7 +99,7 @@ export const NewCommentEmail = ({
   postImageUrl = 'https://cn.zolplay.com/api/og?title=测试文章',
   userFirstName = 'Oiov',
   userLastName = '',
-  userImageUrl = 'https://www.oiov.dev/icon.png',
+  userImageUrl = 'https://www.oiov.dev/logo.png',
   commentContent = '*测试评论*\n- Wow wtf\n- Cool',
 }: {
   postLink?: string | null

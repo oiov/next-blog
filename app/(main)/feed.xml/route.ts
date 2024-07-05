@@ -12,7 +12,7 @@ export async function GET() {
     site_url: seo.url.href,
     feed_url: `${seo.url.href}feed.xml`,
     language: 'zh-CN',
-    image_url: `${seo.url.href}opengraph-image.png`,
+    image_url: `${seo.url.href}og.png`,
     generator: 'PHP 9.0',
   })
 
