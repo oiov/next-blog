@@ -10,7 +10,7 @@ import { SocialLink } from '~/components/links/SocialLink'
 function Developer() {
   return (
     <span className="group">
-      <span className="font-mono">&lt;</span>开发者
+      <span className="font-mono">&lt;</span>一只前端开花者
       <span className="font-mono">/&gt;</span>
       <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
     </span>
@@ -45,7 +45,8 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />
+        <Developer />
+        {/* , <Designer /> */}
         <span className="block h-2" />
       </motion.h1>
       <motion.p
@@ -61,7 +62,7 @@ export function Headline() {
         }}
       >
         <Balancer>
-          我是 Oiov，一名前端开花者，爱好摄影，倒装句患者，反射弧略长
+          我是 Oiov，爱好摄影、前端开发，倒装句患者，反射弧略长
         </Balancer>
       </motion.p>
       <motion.div
