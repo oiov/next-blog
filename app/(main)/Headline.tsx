@@ -10,7 +10,7 @@ import { SocialLink } from '~/components/links/SocialLink'
 function Developer() {
   return (
     <span className="group">
-      <span className="font-mono">&lt;</span>一只前端开花者
+      <span className="font-mono">&lt;</span>开花者
       <span className="font-mono">/&gt;</span>
       <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
     </span>
@@ -61,9 +61,7 @@ export function Headline() {
           delay: 0.1,
         }}
       >
-        <Balancer>
-          我是 Oiov，爱好摄影、前端开发，倒装句患者，反射弧略长
-        </Balancer>
+        <Balancer>我是 Oiov，爱好摄影、前端，倒装句患者，反射弧略长</Balancer>
       </motion.p>
       <motion.div
         className="mt-6 flex gap-6"
