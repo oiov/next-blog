@@ -45,8 +45,7 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />
-        {/* , <Designer /> */}
+        <Developer />, <Designer />
         <span className="block h-2" />
       </motion.h1>
       <motion.p
