@@ -7,6 +7,7 @@ import { Footer } from '~/app/(main)/Footer'
 import { Header } from '~/app/(main)/Header'
 import { QueryProvider } from '~/app/QueryProvider'
 import GoogleAnalytics from './GoogleAnalytics'
+import UmamiAnalytics from './UmamiAnalytics'
 
 export default function BlogLayout({
   children,
@@ -35,6 +36,7 @@ export default function BlogLayout({
       </QueryProvider>
 
       <GoogleAnalytics />
+      <UmamiAnalytics />
       <Analytics />
     </>
   )
