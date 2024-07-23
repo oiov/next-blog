@@ -18,9 +18,9 @@ export default async function BlogHomePage() {
         <Headline />
       </Container>
 
-      {settings.heroPhotos && <Photos photos={settings.heroPhotos} />}
+      {/* {settings.heroPhotos && <Photos photos={settings.heroPhotos} />} */}
 
-      <Container className="mt-24 md:mt-28">
+      <Container className="mt-16 md:mt-20">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-6 pt-6">
             <h2 className="flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100">
