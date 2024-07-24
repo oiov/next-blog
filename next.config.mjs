@@ -73,6 +73,26 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/archives',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/archives/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+      {
+        source: '/categories/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+      {
+        source: '/categories',
+        destination: '/blog',
+        permanent: true,
+      },
     ]
   },
 
