@@ -58,6 +58,21 @@ const nextConfig = {
         destination: 'https://space.bilibili.com/299717355',
         permanent: true,
       },
+      {
+        source: '/articles',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/articles/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+      {
+        source: '/cn/:slug',
+        destination: '/blog',
+        permanent: true,
+      },
     ]
   },
 

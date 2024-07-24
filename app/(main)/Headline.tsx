@@ -75,14 +75,14 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://x.com/yesmoree"
-          aria-label="我的推特"
-          platform="twitter"
-        />
-        <SocialLink
           href="https://github.com/oiov"
           aria-label="我的 GitHub"
           platform="github"
+        />
+        <SocialLink
+          href="https://x.com/yesmoree"
+          aria-label="我的推特"
+          platform="twitter"
         />
         <SocialLink
           href="https://space.bilibili.com/299717355"
