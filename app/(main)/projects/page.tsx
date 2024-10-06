@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           我的项目
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          建站，建站，建站！你做出一个很酷的东西出来，想给他起什么名都可以。
+          你做出一个很酷的东西出来，想给他起什么名都可以。我的产品发布频道 https://discord.gg/YttFbFeq4J
         </p>
       </header>
       <div className="mt-16 sm:mt-20">
