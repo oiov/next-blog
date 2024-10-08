@@ -8,7 +8,7 @@ export const revalidate = 60 * 60 // 1 hour
 export async function GET() {
   const feed = new RSS({
     title: seo.title,
-    description: `${seo.description}. This message is used to verify that this feed (feedId:66353055314823168) belongs to me (userId:65219745998406656). Join me in enjoying the next generation information browser https://follow.is.`,
+    description: `${seo.description}. feedId:66353055314823168+userId:65219745998406656`,
     site_url: seo.url.href,
     feed_url: `${seo.url.href}feed.xml`,
     language: 'zh-CN',
