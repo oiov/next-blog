@@ -24,6 +24,34 @@ const nextConfig = {
         port: '',
         pathname: `/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/**`,
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.vmail.dev',
+      },
+      {
+        protocol: 'https',
+        hostname: 'chaoszhu.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mggg.cloud',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.aitimi.cn',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vtron.site',
+      },
+      {
+        protocol: 'https',
+        hostname: 'blog.gholts.top',
+      },
     ],
   },
 
