@@ -52,6 +52,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'blog.gholts.top',
       },
+      {
+        protocol: 'https',
+        hostname: 'blog.ricocc.com',
+      },
     ],
   },
 

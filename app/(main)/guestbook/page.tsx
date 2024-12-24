@@ -59,6 +59,11 @@ export default async function GuestBookPage() {
       url: 'https://blog.gholts.top',
       icon: 'https://avatars.githubusercontent.com/u/104642670?v=4',
     },
+    {
+      title: 'Rico’s Blog',
+      url: 'https://blog.ricocc.com/',
+      icon: 'https://blog.ricocc.com/favicon.png',
+    },
   ]
 
   return (
