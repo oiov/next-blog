@@ -60,7 +60,7 @@ export function Headline() {
           delay: 0.1,
         }}
       >
-        <Balancer>我是 Oiov，爱好摄影、前端，倒装句患者，反射弧略长</Balancer>
+        <Balancer>我是 Oiov，爱好摄影、前端，倒装句患者，反射弧略长，爱发电主页 https://afdian.com/a/oiovdev</Balancer>
       </motion.p>
       <motion.div
         className="mt-6 flex gap-6"
