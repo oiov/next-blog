@@ -1,9 +1,9 @@
 import Studio from './Studio'
 
-// Ensures the Studio route is statically generated
+// Keep the Studio shell as a static asset. Nested Studio URLs are rewritten
+// here so Vercel never needs to execute a catch-all serverless function.
 export const dynamic = 'force-static'
 
-// Set the right `viewport`, `robots` and `referer` meta tags
 export { metadata, viewport } from 'next-sanity/studio'
 
 export default function StudioPage() {

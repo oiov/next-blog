@@ -1,5 +1,5 @@
 /**
- * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.tsx` route
+ * This configuration is used for the Sanity Studio mounted at `/app/studio/page.tsx`.
  */
 
 import { codeInput } from '@sanity/code-input'
